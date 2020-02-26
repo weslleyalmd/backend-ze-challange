@@ -29,7 +29,7 @@ before_action :set_supplier, only: [:show, :update, :destroy]
   private
 
   def supplier_params
-    params.require(:supplier).permit!
+    params.permit(:tradingName, :ownerName, :document)
   end
 
   def set_supplier

@@ -45,26 +45,7 @@ RSpec.describe 'Suppliers API', type: :request do
   end
 
   describe 'POST /suppliers' do
-    let(:valid_attributes) {
-      {
-        supplier: {
-          tradingName: "Supplier 1",
-          ownerName: "Luke Skywalker",
-          document: "1432132123891/0001",
-          coverage_area_attributes: { 
-            type: "MultiPolygon", 
-            coordinates: [
-              [[[30, 20], [45, 40], [10, 40], [30, 20]]], 
-              [[[15, 5], [40, 10], [10, 20], [5, 10], [15, 5]]]
-            ]
-          },
-          address_attributes: { 
-            type: "Point",
-            coordinates: [-46.57421, -21.785741]
-          }
-        }
-      }
-    }
+    let(:valid_attributes) { { tradingName: 'Supplier 1', ownerName: 'Luke Skywalker', document: '1432132123891/0001' } }
 
     context 'when the request is valid' do
       before { post '/suppliers', params: valid_attributes }
@@ -81,7 +62,7 @@ RSpec.describe 'Suppliers API', type: :request do
     end
 
     context 'when the request is invalid' do
-      before { post '/suppliers', params: { supplier: {tradingName: "Foobar"}} }
+      before { post '/suppliers', params: { tradingName: 'Foobar' } }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -95,7 +76,7 @@ RSpec.describe 'Suppliers API', type: :request do
   end
 
   describe 'PUT /suppliers/:id' do
-    let(:valid_attributes) { { supplier: { tradingName: 'Supplier 1.1'} } }
+    let(:valid_attributes) { { tradingName: 'Supplier 1.1' } }
 
     context 'when the record exists' do
       before { put "/suppliers/#{supplier_id}", params: valid_attributes }
