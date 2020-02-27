@@ -1,15 +1,14 @@
-# README
-
 # To execute this project
 
 1. Clone this project locally
 2. Execute bundle install inside project folder
 3. Run rails s
 4. Available URLs:
-4.1. http://{YOUR_HOST}/suppliers                    || GET - Return all Suppliers
-4.2. http://{YOUR_HOST}/suppliers/:id                || GET - Return specific Supplier
-4.3. http://{YOUR_HOST}/closest_supplier?lng=X&lat=Y || GET - Return closest Supplier within its coverageArea
-4.4. http://{YOUR_HOST}/suppliers                    || POST - Create new Supplier
+  - http://{YOUR_HOST}/suppliers                    || GET - Return all Suppliers
+  - http://{YOUR_HOST}/suppliers/:id                || GET - Return specific Supplier
+  - http://{YOUR_HOST}/closest_supplier?lng=X&lat=Y || GET - Return closest Supplier within its coverageArea
+  - http://{YOUR_HOST}/suppliers                    || POST - Create new Supplier
+
 
 5. POST Body Exemple
 ```javascript
