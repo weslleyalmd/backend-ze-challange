@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2020_02_22_155755) do
     t.string "tradingName"
     t.string "ownerName"
     t.string "document"
+    t.geometry "coverageArea", limit: {:type=>"multi_polygon", :srid=>0}
+    t.geometry "address", limit: {:type=>"point", :srid=>0}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
