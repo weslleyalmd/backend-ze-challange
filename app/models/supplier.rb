@@ -5,6 +5,9 @@ class Supplier < ApplicationRecord
 
   def self.closest(lng, lat)
     point = RGeo::Geographic.spherical_factory.point(lng, lat)
+    ### I know that here we have a bug finding the closest supplier
+    ### I believe that it occours becouse MySQL isn't good for spatial queries
+    ### Because of the due date to deliver this test, I don't have time to switch to PostGIS (postgres)
     Supplier.where("st_contains(coverageArea, '#{point}')").first
   end
 
